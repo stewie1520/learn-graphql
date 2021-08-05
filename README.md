@@ -11,4 +11,10 @@ $ npm start
 
 ```
 
-## TODO
+## Try it out
+
+Go to http://localhost:3000/graphql/v1 to open graphiql
+
+
+![Graphiql](https://github.com/stewie1520/learn-graphql/assets/images/graphql.png)
+
