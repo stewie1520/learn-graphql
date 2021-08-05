@@ -1,0 +1,36 @@
+{
+  "name": "learn-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development && node main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.6",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.5.1",
+    "graphql-tools": "^8.1.0",
+    "lodash": "^4.17.21",
+    "merge-graphql-schemas": "^1.7.8",
+    "module-alias": "^2.2.2",
+    "mongoose": "^5.13.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-import-resolver-custom-alias": "^1.2.0",
+    "eslint-plugin-import": "^2.23.4"
+  },
+  "_moduleAliases": {
+    "@": "./src"
+  }
+}
