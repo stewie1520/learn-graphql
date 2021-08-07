@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 const { Config } = require('@/config');
+const logger = require('@/libs/logger');
 
 /**
  * add neccessary middlewares for Express app
@@ -14,9 +15,7 @@ const useAppMiddlewares = (app) => {
 
   app.use(cookieParser(Config.get('session.secret')));
 
-  if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('dev'));
-  }
+  app.use(morgan('combined', { stream: logger.stream }));
 
   app.use(cors({
     origin: '*',
