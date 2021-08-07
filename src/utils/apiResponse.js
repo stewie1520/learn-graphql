@@ -10,6 +10,7 @@ const httpStatuses = {
   REQUEST_TIMEOUT: 408,
   CONFLICT: 409,
   UNPROCESSABLE_ENTITY: 422,
+  INTERNAL_SERVER_ERROR: 500,
 };
 
 const httpCodes = invert(httpStatuses);

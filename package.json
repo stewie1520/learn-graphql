@@ -7,7 +7,8 @@
     "start": "nodemon --exec npm-run-all --sequential eslint dev",
     "eslint": "eslint --format node_modules/eslint-friendly-formatter main.js src/",
     "dev": "cross-env NODE_ENV=development node --inspect=0.0.0.0:9228 main.js",
-    "seed": "node ./src/seeds/index"
+    "seed": "node ./src/seeds/index",
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "@graphql-tools/load-files": "^6.3.2",
     "@graphql-tools/merge": "^7.0.0",
     "@graphql-tools/schema": "^8.0.3",
+    "bcrypt": "^5.0.1",
     "config": "^3.3.6",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
@@ -25,18 +27,24 @@
     "express-graphql": "^0.12.0",
     "glob": "^7.1.7",
     "graphql": "^15.5.1",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "module-alias": "^2.2.2",
     "mongoose": "^5.13.5",
+    "mongoose-delete": "^0.5.3",
+    "mongoose-paginate-v2": "^1.4.1",
     "morgan": "^1.10.0",
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-import-resolver-custom-alias": "^1.2.0",
     "eslint-plugin-import": "^2.23.4",
+    "mocha": "^9.0.3",
     "nodemon": "^2.0.12",
     "npm-run-all": "^4.1.5"
   },
