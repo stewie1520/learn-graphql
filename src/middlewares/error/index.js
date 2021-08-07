@@ -14,12 +14,14 @@ const notFound = (req, res, next) => {
   return errorHandler(error, req, res, next);
 };
 
+/**
+ * @param {import('express').Express} app - Express app instance
+ */
+const useErrorHandler = (app) => {
+  app.use(notFound);
+  app.use(errorHandler);
+};
+
 module.exports = {
-  /**
-   * @param {import('express').Express} app - Express app instance
-   */
-  useErrorHandler: (app) => {
-    app.use(notFound);
-    app.use(errorHandler);
-  },
+  useErrorHandler,
 };

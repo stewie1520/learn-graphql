@@ -5,6 +5,4 @@ const BookSchema = new mongoose.Schema(definition, options);
 
 const BookModel = mongoose.model('Book', BookSchema);
 
-module.exports = {
-  BookModel,
-};
+module.exports = { BookModel };

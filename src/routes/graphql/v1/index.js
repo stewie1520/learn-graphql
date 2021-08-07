@@ -7,5 +7,5 @@ module.exports = (req, res, next) => {
     schema,
     graphiql: process.env.NODE_ENV !== 'production',
     context: { req, res, next },
-  })(req, res);
+  })(req, res, next);
 };

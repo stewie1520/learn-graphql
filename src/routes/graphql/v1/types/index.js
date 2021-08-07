@@ -1,8 +1,9 @@
-const { mergeTypes } = require('merge-graphql-schemas');
-const typeDefBook = require('./Book/index');
+/* eslint-disable global-require */
+/* eslint-disable import/no-dynamic-require */
+const { mergeTypeDefs } = require('@graphql-tools/merge');
+const { loadFilesSync } = require('@graphql-tools/load-files');
+const path = require('path');
 
-const typeDefs = [
-  typeDefBook,
-];
+const typeArrays = loadFilesSync(path.join(__dirname, '*', 'index.js'));
 
-module.exports = mergeTypes(typeDefs, { all: true });
+module.exports = mergeTypeDefs(typeArrays);
