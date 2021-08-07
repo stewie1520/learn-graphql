@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { Config } = require('@/config');
+const logger = require('@/libs/logger');
 
 module.exports = () => {
   const uri = Config.get('db.uri');
@@ -13,28 +14,28 @@ module.exports = () => {
 
   /** Handle mongoose connection events */
   mongoose.connection.on('connecting', () => {
-    console.log('Connecting to Mongo...');
+    logger.info('Connecting to Mongo...');
   });
 
   mongoose.connection.on('connected', () => {
-    console.log('Mongo is connected.');
+    logger.info('Mongo is connected.');
   });
 
   mongoose.connection.on('reconnected', () => {
-    console.log('Mongo trying to reconnect...');
+    logger.info('Mongo trying to reconnect...');
   });
 
   mongoose.connection.on('error', (error) => {
-    console.error('Unable to connect to the Mongo: ', error);
+    logger.error('Unable to connect to the Mongo: ', error);
   });
 
   mongoose.connection.on('disconnected', () => {
-    console.log('Mongo has disconnected!');
+    logger.info('Mongo has disconnected!');
 
     // Trying to connect
     const waitingMS = 5000;
     setTimeout(() => {
-      console.log(`Reconnecting in ${waitingMS / 1000}s...`);
+      logger.info(`Reconnecting in ${waitingMS / 1000}s...`);
       return mongoose.connect(uri, options);
     }, waitingMS);
   });
