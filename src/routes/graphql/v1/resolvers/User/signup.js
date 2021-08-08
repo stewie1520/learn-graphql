@@ -25,7 +25,7 @@ const signup = async (root, args) => {
     return {
       accessToken,
       refreshToken,
-      user: dbUser,
+      user: credentials,
     };
   } catch (err) {
     logger.error(err);

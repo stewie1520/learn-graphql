@@ -1,3 +1,3 @@
-const { loadGraphqlTypes } = require('@/utils/loadGraphqlTypes');
+const { loadGraphqlTypes } = require('@/utils/graphql');
 
 module.exports = loadGraphqlTypes(__dirname);

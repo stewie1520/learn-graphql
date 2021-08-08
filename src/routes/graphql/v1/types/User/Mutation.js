@@ -6,5 +6,10 @@ module.exports = `
       firstName: String!
       lastName: String!
     ): AuthPayload
+
+    signin(
+      email: String!
+      password: String!
+    ): AuthPayload
   }
 `;

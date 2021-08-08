@@ -1,5 +1,3 @@
-const bcrypt = require('bcrypt');
-
 const { UserModel } = require('@/models/User');
 const signUpValidationSchema = require('./validations/signup');
 
@@ -11,7 +9,7 @@ const signup = async ({
 }) => {
   const user = {
     email,
-    password: await bcrypt.hash(password, 10),
+    password,
     firstName,
     lastName,
   };
