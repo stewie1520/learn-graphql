@@ -1,18 +1,3 @@
-const output = `
-  type Book {
-    id: String!
-    title: String
-    description: String
-    cost: Float
-    price: Float
-  }
-`;
+const { loadGraphqlTypes } = require('@/utils/loadGraphqlTypes');
 
-const query = `
-  type Query {
-    searchBook(title: String): [Book]
-    getBookById(id: String!): Book
-  }
-`;
-
-module.exports = `${output} ${query}`;
+module.exports = loadGraphqlTypes(__dirname);

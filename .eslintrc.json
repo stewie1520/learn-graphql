@@ -12,7 +12,10 @@
         "ecmaVersion": 12
     },
     "rules": {
-        "no-console": "off"
+        "no-console": "off",
+        "global-require": "off",
+        "import/no-dynamic-require": "off",
+        "no-param-reassign": "off"
     },
     "settings": {
         "import/resolver": {

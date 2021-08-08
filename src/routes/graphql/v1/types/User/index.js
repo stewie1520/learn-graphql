@@ -1,27 +1,3 @@
-const outputs = `
-  type AuthPayload {
-    accessToken: String
-    refreshToken: String
-    user: User
-  }
+const { loadGraphqlTypes } = require('@/utils/loadGraphqlTypes');
 
-  type User {
-    _id: String!
-    email: String!
-    firstName: String!
-    lastName: String!
-  }
-`;
-
-const mutations = `
-  type Mutation {
-    signup(
-      email: String!
-      password: String!
-      firstName: String!
-      lastName: String!
-    ): AuthPayload
-  }
-`;
-
-module.exports = `${outputs} ${mutations}`;
+module.exports = loadGraphqlTypes(__dirname);
